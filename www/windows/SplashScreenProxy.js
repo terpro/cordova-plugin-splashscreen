@@ -29,6 +29,9 @@ var SplashScreen = {
     },
     hide: function () {
         splash.hide();
+    },
+    destroy: function () {
+        splash.destroy();
     }
 };
 

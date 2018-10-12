@@ -19,18 +19,25 @@
  *
 */
 
-var exec = require('cordova/exec');
+( function() {
 
-var splashscreen = {
-    show:function() {
-        exec(null, null, "SplashScreen", "show", []);
+var win = null;
+
+module.exports = {
+    show: function() {
+        if ( win === null ) {
+            win = window.open('splashscreen.html');
+        }
     },
-    hide:function() {
-        exec(null, null, "SplashScreen", "hide", []);
-    },
-    destroy:function() {
-        exec(null, null, "SplashScreen", "destroy", []);
+
+    hide: function() {
+        if ( win !== null ) {
+            win.close();
+            win = null;
+        }
     }
 };
 
-module.exports = splashscreen;
+require("cordova/tizen/commandProxy").add("SplashScreen", module.exports);
+
+})();
