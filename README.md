@@ -25,8 +25,22 @@ description: Control the splash screen for your app.
 
 Adds "SplashScreenBackgroundColor" to config to set status bar color while splash is visible. Learn more: https://github.com/apache/cordova-plugin-splashscreen/pull/124
 
+- `SplashScreenBackgroundColor` 
+
+```xml
+    <preference name="SplashScreenBackgroundColor" value="0xFFFFFFFF" />
+```
+
 Fixes issue where splash is hidden onPause, lean more: https://issues.apache.org/jira/browse/CB-13634
 Adds navigator.splashscreen.destroy() function (should be called before calling navigator.app.exitApp() to prevent splash from being visible during hide animation)
+
+## splashscreen.destroy
+
+Allow splashscreen to hide onPause, onDestroy.
+
+```js
+navigator.splashscreen.destroy();
+```
 
 # cordova-plugin-splashscreen
 
