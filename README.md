@@ -31,12 +31,12 @@ Adds "SplashScreenBackgroundColor" to config to set status bar color while splas
     <preference name="SplashScreenBackgroundColor" value="0xFFFFFFFF" />
 ```
 
-Fixes issue where splash is hidden onPause, lean more: https://issues.apache.org/jira/browse/CB-13634
-Adds navigator.splashscreen.destroy() function (should be called before calling navigator.app.exitApp() to prevent splash from being visible during hide animation)
-
 ## splashscreen.destroy
 
-Allow splashscreen to hide onPause, onDestroy.
+Fixes issue where splash is hidden onPause, lean more: https://issues.apache.org/jira/browse/CB-13634
+Adds navigator.splashscreen.destroy() function.
+
+Allow splashscreen to hide onPause, onDestroy. Only applies once. Meant to be called right before navigator.app.exitApp() to prevent splashscreen from being visible during hide animation
 
 ```js
 navigator.splashscreen.destroy();
