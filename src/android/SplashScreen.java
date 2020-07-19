@@ -198,13 +198,14 @@ public class SplashScreen extends CordovaPlugin {
             if ("hide".equals(data.toString())) {
                 this.removeSplashScreen(false);
             } else {
-			if ("show".equals(data.toString())) {
-                this.showSplashScreen(false);
-			} else {
-			if ("destroy".equals(data.toString())) {
-				dontShowOnPause = true;
-			}
-			}
+		if ("show".equals(data.toString())) {
+			this.removeSplashScreen(true);
+                	this.showSplashScreen(false);
+		} else {
+		if ("destroy".equals(data.toString())) {
+			dontShowOnPause = true;
+		}
+		}
             }
         } else if ("spinner".equals(id)) {
             if ("stop".equals(data.toString())) {
