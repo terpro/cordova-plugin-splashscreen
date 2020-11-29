@@ -345,6 +345,11 @@ public class SplashScreen extends CordovaPlugin {
                 // Status bar color just like cordova-plugin.statusbar
                 String statusBarColor = preferences.getString("StatusBarBackgroundColor", "#000000");
                 String statusBarColorDark = preferences.getString("StatusBarBackgroundColorDark", "#000000");
+				
+				if (Build.VERSION.SDK_INT == 22) {
+					statusBarColor = "#999999";
+				}
+				
                 if (statusBarColor != null && !statusBarColor.isEmpty() && Build.VERSION.SDK_INT >= 19) {
 
                     splashWindow.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
@@ -367,6 +372,10 @@ public class SplashScreen extends CordovaPlugin {
 				
                 String navigationBarColor = preferences.getString("SplashNavigationBarBackgroundColor", "#000000");
                 String navigationBarColorDark = preferences.getString("SplashNavigationBarBackgroundColorDark", "#000000");
+				
+				if (Build.VERSION.SDK_INT == 22) {
+					navigationBarColor = "#000000";
+				}
 
                 if (navigationBarColor != null && !navigationBarColor.isEmpty() && Build.VERSION.SDK_INT >= 19) {
 
